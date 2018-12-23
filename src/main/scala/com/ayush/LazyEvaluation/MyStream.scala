@@ -1,7 +1,5 @@
 package com.ayush.LazyEvaluation
 
-import java.util.function.Predicate
-
 import scala.annotation.tailrec
 
 abstract class MyStream[+A] {
