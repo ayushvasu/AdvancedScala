@@ -1,7 +1,9 @@
+package com.ayush
+
 object KnightTour {
   type Board = Array[Array[Boolean]]
-  val boardsize = 5
-  val startingPositions = for {x <- (0 until boardsize); y <- (0 until boardsize)} yield (x, y)
+  val boardsize = 10
+  val startingPositions = List((0,0))//for {x <- (0 until boardsize); y <- (0 until boardsize)} yield (x, y)
 
   def legalmoves(x: Int, y: Int) = {
     val possibles = List((x - 1, y - 2), (x - 2, y - 1), (x + 1, y - 2), (x + 2, y - 1), (x + 1, y + 2), (x + 2, y + 1), (x - 1, y + 2), (x - 2, y + 1))
