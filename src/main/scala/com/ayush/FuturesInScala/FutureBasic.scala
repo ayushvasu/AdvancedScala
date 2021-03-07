@@ -93,4 +93,21 @@ object FutureBasic extends App {
   import scala.concurrent.duration._
   val value = Await.result(aFuture, 5.seconds)
   println(value)
+
+  import scala.concurrent.blocking
+
+  def synchronizedMethod(str: String) = println(str);123
+
+  val f = Future{
+    println("Hello")
+    val i = blocking{  //Adjust the execution context behavior
+      synchronizedMethod("Hello")
+    }
+    println(i)
+    i
+  }
+
+
+
+
 }
